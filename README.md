@@ -75,7 +75,7 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com), [
 
 ```bash
 # Clone this project
-$ git clone https://github.com/Kamigami55/timezone-converter
+$ git clone https://github.com/eason-dev/timezone-converter
 
 # Access
 $ cd timezone-converter
@@ -95,4 +95,4 @@ This project is under license from MIT. For more details, see the [LICENSE](LICE
 
 ## :heart: Author
 
-Made with :heart: by <a href="https://easonchang.com" target="_blank">Eason Chang</a> and <a href="https://carolhsiao.webflow.io" target="_blank">Carol Hsiao</a>
+Made with :heart: by <a href="https://easonchang.com" target="_blank">Eason Chang</a> and <a href="https://www.carolhsiao.com" target="_blank">Carol Hsiao</a>

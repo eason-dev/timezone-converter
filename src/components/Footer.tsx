@@ -13,7 +13,7 @@ export function Footer() {
         </a>
         {' & '}
         <a
-          href="https://carolhsiao.webflow.io"
+          href="https://www.carolhsiao.com"
           target="_blank"
           rel="noreferrer"
           className="hover:underline underline-offset-4"

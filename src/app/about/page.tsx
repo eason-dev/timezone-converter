@@ -1,4 +1,4 @@
-import { GlobeIcon, LinkedinIcon, TwitterIcon } from 'lucide-react';
+import { GithubIcon, GlobeIcon, LinkedinIcon, TwitterIcon } from 'lucide-react';
 import Image from 'next/image';
 
 import { H1 } from '@/components/atoms/H1';
@@ -37,7 +37,7 @@ export default function About() {
         Also, this project is open source and available on GitHub. You can find
         the source code on 👉{' '}
         <a
-          href="https://github.com/Kamigami55/timezone-converter"
+          href="https://github.com/eason-dev/timezone-converter"
           target="_blank"
           className="underline underline-offset-4"
           rel="noreferrer"
@@ -71,7 +71,7 @@ export default function About() {
           <div className="flex gap-2 items-center flex-wrap justify-end">
             <Button variant="outline" size="icon" asChild>
               <a
-                href="https://twitter.com/EasonChang_me"
+                href="https://x.com/EasonChang_me"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -94,6 +94,15 @@ export default function About() {
                 rel="noreferrer"
               >
                 <GlobeIcon className="h-4 w-4" />
+              </a>
+            </Button>
+            <Button variant="outline" size="icon" asChild>
+              <a
+                href="https://github.com/eason-dev"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <GithubIcon className="h-4 w-4" />
               </a>
             </Button>
           </div>
@@ -120,6 +129,15 @@ export default function About() {
           <div className="flex gap-2 items-center flex-wrap justify-end">
             <Button variant="outline" size="icon" asChild>
               <a
+                href="https://x.com/CarolXiaoo"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TwitterIcon className="h-4 w-4" />
+              </a>
+            </Button>
+            <Button variant="outline" size="icon" asChild>
+              <a
                 href="https://www.linkedin.com/in/carol-hsiao-5779a1158/"
                 target="_blank"
                 rel="noreferrer"
@@ -129,11 +147,20 @@ export default function About() {
             </Button>
             <Button variant="outline" size="icon" asChild>
               <a
-                href="https://carolhsiao.webflow.io/"
+                href="https://www.carolhsiao.com"
                 target="_blank"
                 rel="noreferrer"
               >
                 <GlobeIcon className="h-4 w-4" />
+              </a>
+            </Button>
+            <Button variant="outline" size="icon" asChild>
+              <a
+                href="https://github.com/carolhsiaoo"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <GithubIcon className="h-4 w-4" />
               </a>
             </Button>
           </div>
