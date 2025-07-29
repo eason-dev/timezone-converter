@@ -1,5 +1,6 @@
 import './globals.css';
 
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -72,6 +73,9 @@ export default function RootLayout({
         </ThemeProvider>
 
         <Analytics />
+        {process.env.NODE_ENV === 'production' && (
+          <GoogleAnalytics gaId="G-N45V5H57XH" />
+        )}
       </body>
     </html>
   );
