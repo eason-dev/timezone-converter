@@ -64,8 +64,15 @@ The following tools were used in this project:
 - [Tailwind CSS](https://tailwindcss.com/): For styling
 - [shadcn/ui](https://ui.shadcn.com/): For UI components
 - [luxon](https://moment.github.io/luxon/): For date and time manipulation
-- [@vvo/tzdb](https://github.com/vvo/tzdb): For timezone date
+- [@vvo/tzdb](https://github.com/vvo/tzdb): For the time zone list and city names
 - [@dnd-kit](https://dndkit.com/): For drag and drop functionality
+
+Offsets and abbreviations are read from the browser's own IANA time zone
+database rather than from a bundled snapshot, so regions that change their rules
+— British Columbia, Alberta and the Northwest Territories settling on one offset
+year round, Morocco moving to permanent UTC+0 — are picked up as browsers update
+their data. `pnpm check:tzdata` reports where the bundled zone list has fallen
+behind.
 
 ## :white_check_mark: Requirements
 

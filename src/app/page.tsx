@@ -15,7 +15,6 @@ import {
   sortableKeyboardCoordinates,
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
-import { getTimeZones } from '@vvo/tzdb';
 import { RotateCcwIcon } from 'lucide-react';
 import { DateTime } from 'luxon';
 import * as React from 'react';
@@ -30,24 +29,20 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { TimeZoneWithId } from '@/lib/timezone';
+import {
+  findTimeZone,
+  getRuntimeTimeZoneName,
+  getSelectableTimeZones,
+  TimeZoneWithId,
+} from '@/lib/timezone';
 
 export default function Home() {
+  const runtimeTimezoneName = React.useMemo(getRuntimeTimeZoneName, []);
   const allTimezones: TimeZoneWithId[] = React.useMemo(
-    () =>
-      getTimeZones().map(
-        (tz, index) => ({
-          ...tz,
-          id: index,
-        }),
-        []
-      ),
+    () => getSelectableTimeZones(),
     []
   );
-  const userTimezone = allTimezones.find(
-    (timezone) =>
-      timezone.name === Intl.DateTimeFormat().resolvedOptions().timeZone
-  );
+  const userTimezone = findTimeZone(allTimezones, runtimeTimezoneName);
   const [selectedTimezones, setSelectedTimezones] = React.useState<
     TimeZoneWithId[]
   >(userTimezone ? [userTimezone] : []);

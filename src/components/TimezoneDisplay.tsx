@@ -9,7 +9,7 @@ import * as React from 'react';
 import { DateTimeDisplay } from '@/components/DateTimeDisplay';
 import { Button } from '@/components/ui/button';
 import { pad } from '@/lib/string';
-import { utcOffsetToDisplay } from '@/lib/timezone';
+import { getZoneLabel } from '@/lib/timezone';
 import { cn } from '@/lib/utils';
 
 export function TimezoneDisplay({
@@ -42,6 +42,14 @@ export function TimezoneDisplay({
   const selectedTimeInZone = DateTime.fromJSDate(selectedTime).setZone(
     timezone.name
   );
+
+  // Label the zone as it stands at the time on screen, read from the runtime's
+  // IANA data, so the header agrees with the bar across a DST boundary and in
+  // regions that have dropped the seasonal change.
+  const zoneLabel = getZoneLabel(timezone.name, selectedTime, {
+    countryCode: timezone.countryCode,
+    fallback: timezone.abbreviation,
+  });
 
   const {
     attributes,
@@ -105,9 +113,7 @@ export function TimezoneDisplay({
                 <p className="text-xl font-bold">{timezone.name}</p>
               </div>
               <p className="text-md text-[#7C7C7C] dark:text-[#DFDFDF] font-medium">
-                {timezone.abbreviation}
-                {', UTC'}
-                {utcOffsetToDisplay(timezone.currentTimeOffsetInMinutes)}
+                {zoneLabel}
               </p>
             </div>
             {isEditing && (

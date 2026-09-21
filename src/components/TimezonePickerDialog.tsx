@@ -1,6 +1,5 @@
 'use client';
 
-import { getTimeZones } from '@vvo/tzdb';
 import * as React from 'react';
 
 import {
@@ -12,7 +11,11 @@ import {
   CommandList,
   CommandSeparator,
 } from '@/components/ui/command';
-import { TimeZoneWithId, utcOffsetToDisplay } from '@/lib/timezone';
+import {
+  getSelectableTimeZones,
+  TimeZoneWithId,
+  utcOffsetToDisplay,
+} from '@/lib/timezone';
 
 export function TimezonePickerDialog({
   open,
@@ -30,14 +33,7 @@ export function TimezonePickerDialog({
   userTimezone: TimeZoneWithId | null;
 }) {
   const allTimezones: TimeZoneWithId[] = React.useMemo(
-    () =>
-      getTimeZones().map(
-        (tz, index) => ({
-          ...tz,
-          id: index,
-        }),
-        []
-      ),
+    () => getSelectableTimeZones(),
     []
   );
   const unselectedTimezones = React.useMemo(
